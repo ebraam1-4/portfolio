@@ -3,35 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ebraam Emad | Front-End Developer</title>
     <link rel="stylesheet" href="style.css" />
-    <title>Ebraam Emad</title>
   </head>
   <body>
-    <div class="container">
-      <nav>
-        <img src="preview (3).png" alt="logo" />
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">My works</a></li>
-          <li><a href="#">Skills</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-        <div class="klam">
-          <h3>Hallo, I'm <span>Ebraam</span></h3>
-          <h1><span>F</span>ront-End <span>D</span>eveloper</h1>
-          <p>I can help you for design your own websites</p>
-          <a href="*">Hire me</a>
+    <header class="topbar">
+      <div class="nav-shell" id="navShell">
+        <div class="brand">&lt;Ebraam /&gt;</div>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="mainNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav" id="mainNav">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Process</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+        </nav>
+        <button class="nav-button">Let's Talk</button>
+      </div>
+    </header>
+
+    <main class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1>Ebraam Emad</h1>
+          <p class="subtitle">
+            Frontend Developer focused on crafting smooth and fast web
+            experiences
+          </p>
+          <p class="description">
+            I turn ideas into clean, scalable, and user-friendly interfaces that
+            feel smooth and polished.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#" class="btn btn--primary">View My Work</a>
+            <a href="#" class="btn btn--secondary">Get In Touch</a>
+          </div>
         </div>
-        <div class="bero"><img src="preview (2).png" alt="" /></div>
-    <div class="icons">
-        <a href="*"><ion-icon name ="logo-facebook"></ion-icon></a>
-        <a href="*"><ion-icon name ="logo-instagram"></ion-icon></a>
-        <a href="*"><ion-icon name ="logo-whatsapp"></ion-icon></a>
-    
-    </div>
-    </div>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+        <div class="hero-visual" aria-label="3D robot illustration">
+          <div class="robot-wrap">
+            <spline-viewer
+              id="mySpline"
+              url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+            ></spline-viewer>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      type="module"
+      src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"
+    ></script>
+    <script src="mine.js"></script>
   </body>
 </html>
