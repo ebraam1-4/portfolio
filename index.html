@@ -4,9 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ebraam Emad | Front-End Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Ebraam Emad, a Front-End Developer and WordPress Specialist based in Cairo, Egypt."
+    />
+    <meta name="theme-color" content="#040404" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="progress" id="progress" aria-hidden="true"></div>
     <header class="topbar">
       <div class="nav-shell" id="navShell">
         <div class="brand">&lt;Ebraam /&gt;</div>
@@ -24,17 +37,17 @@
         </button>
 
         <nav class="nav" id="mainNav">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Process</a>
-          <a href="#">Services</a>
-          <a href="#">Contact</a>
+          <a href="#home">Home</a>
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
         </nav>
-        <button class="nav-button">Let's Talk</button>
+        <a class="nav-button" href="#contact">Let's Talk</a>
       </div>
     </header>
 
-    <main class="hero">
+    <main class="hero" id="home">
       <div class="hero-inner">
         <div class="hero-copy">
           <h1>Ebraam Emad</h1>
@@ -47,9 +60,20 @@
             feel smooth and polished.
           </p>
 
+          <p class="typed-line" aria-live="off">
+            <span class="typed-label">Currently building</span>
+            <span id="typed"></span><span class="caret" aria-hidden="true"></span>
+          </p>
+
           <div class="hero-actions">
-            <a href="#" class="btn btn--primary">View My Work</a>
-            <a href="#" class="btn btn--secondary">Get In Touch</a>
+            <a href="#work" class="btn btn--primary">View My Work</a>
+            <a href="#contact" class="btn btn--secondary">Get In Touch</a>
+            <a
+              href="Ebraam_Emad_CV.pdf"
+              download="Ebraam_Emad_CV.pdf"
+              class="btn btn--secondary"
+              ><i class="fas fa-file-arrow-down"></i>&nbsp; Download CV</a
+            >
           </div>
         </div>
 
@@ -63,6 +87,158 @@
         </div>
       </div>
     </main>
+
+    <div class="content">
+      <section class="section reveal" id="work">
+        <p class="eyebrow">Selected work</p>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-lead">
+          A selection of websites and interfaces I've built. Each card opens the
+          source code on GitHub.
+        </p>
+        <div class="project-grid">
+          <a class="project-card" href="https://github.com/ebraam1-4/COFFEE-HOUSE" target="_blank" rel="noopener">
+            <div class="card-top">
+              <span class="card-icon"><i class="fas fa-mug-hot"></i></span>
+              <i class="fas fa-arrow-up-right-from-square card-arrow"></i>
+            </div>
+            <h3>Coffee House</h3>
+            <p>Landing page for a coffee house with a popular menu section and client reviews.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+          </a>
+          <a class="project-card" href="https://github.com/ebraam1-4/Bero-World" target="_blank" rel="noopener">
+            <div class="card-top">
+              <span class="card-icon"><i class="fas fa-globe"></i></span>
+              <i class="fas fa-arrow-up-right-from-square card-arrow"></i>
+            </div>
+            <h3>Bero World</h3>
+            <p>Multi-section website with articles, a gallery and a features showcase.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+          </a>
+          <a class="project-card" href="https://github.com/ebraam1-4/Kasper" target="_blank" rel="noopener">
+            <div class="card-top">
+              <span class="card-icon"><i class="fas fa-briefcase"></i></span>
+              <i class="fas fa-arrow-up-right-from-square card-arrow"></i>
+            </div>
+            <h3>Kasper</h3>
+            <p>Sleek agency-style landing page with interactive navigation and a responsive layout.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive</span></div>
+          </a>
+          <a class="project-card" href="https://github.com/ebraam1-4/CAFFEINE-CORNER" target="_blank" rel="noopener">
+            <div class="card-top">
+              <span class="card-icon"><i class="fas fa-mug-saucer"></i></span>
+              <i class="fas fa-arrow-up-right-from-square card-arrow"></i>
+            </div>
+            <h3>Caffeine Corner</h3>
+            <p>Coffee shop landing page highlighting easy ordering, specialty roasts and delivery.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+          </a>
+          <a class="project-card" href="https://github.com/ebraam1-4/My-card" target="_blank" rel="noopener">
+            <div class="card-top">
+              <span class="card-icon"><i class="fas fa-id-card"></i></span>
+              <i class="fas fa-arrow-up-right-from-square card-arrow"></i>
+            </div>
+            <h3>My Card</h3>
+            <p>A personal digital business card with a clean, modern look.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">UI/UX</span></div>
+          </a>
+          <a class="project-card" href="https://github.com/ebraam1-4/sant-mark" target="_blank" rel="noopener">
+            <div class="card-top">
+              <span class="card-icon"><i class="fas fa-graduation-cap"></i></span>
+              <i class="fas fa-arrow-up-right-from-square card-arrow"></i>
+            </div>
+            <h3>St. Mark School</h3>
+            <p>Educational web portal for a servant-training school, with multiple pages and an Arabic RTL interface.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">RTL</span></div>
+          </a>
+        </div>
+        <a class="more-link" href="https://github.com/ebraam1-4?tab=repositories" target="_blank" rel="noopener"
+          >View all repositories on GitHub <i class="fas fa-arrow-right"></i
+        ></a>
+      </section>
+
+      <section class="section reveal" id="about">
+        <p class="eyebrow">About</p>
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="about-text">
+          Results-driven <strong>Front-End Developer</strong> and
+          <strong>Management Information Systems (MIS)</strong> student
+          specializing in high-performance, responsive web interfaces and dynamic
+          WordPress sites. Highly proficient in React.js, modern JavaScript, UI
+          component libraries and custom Elementor websites, and I use
+          <strong>AI tools &amp; prompt engineering</strong> to speed up my
+          workflow and write clean, maintainable code.
+        </p>
+        <div class="facts">
+          <span><i class="fas fa-location-dot"></i> Cairo, Egypt</span>
+          <span><i class="fab fa-github"></i> 10 Public Repositories</span>
+          <span><i class="fas fa-language"></i> Arabic &middot; English &middot; Spanish (learning)</span>
+        </div>
+      </section>
+
+      <section class="section reveal" id="skills">
+        <p class="eyebrow">Skills</p>
+        <h2 class="section-title">Tools &amp; Technologies</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3><i class="fas fa-code"></i> Front-End Development</h3>
+            <div class="tags"><span class="tag">React.js</span><span class="tag">JavaScript ES6+</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Tailwind CSS</span><span class="tag">Bootstrap</span><span class="tag">Responsive Design</span></div>
+          </div>
+          <div class="skill-card">
+            <h3><i class="fab fa-wordpress"></i> CMS &amp; Web Design</h3>
+            <div class="tags"><span class="tag">WordPress</span><span class="tag">Elementor Pro</span><span class="tag">WooCommerce</span><span class="tag">Theme Customization</span><span class="tag">Site Speed Optimization</span></div>
+          </div>
+          <div class="skill-card">
+            <h3><i class="fas fa-robot"></i> AI &amp; Developer Tools</h3>
+            <div class="tags"><span class="tag">AI-Assisted Coding</span><span class="tag">Prompt Engineering</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">VS Code</span><span class="tag">Netlify</span><span class="tag">Vercel</span></div>
+          </div>
+          <div class="skill-card">
+            <h3><i class="fas fa-diagram-project"></i> MIS &amp; Systems</h3>
+            <div class="tags"><span class="tag">Systems Analysis</span><span class="tag">UI/UX Workflow Design</span><span class="tag">Enterprise Info Systems</span><span class="tag">C++</span></div>
+          </div>
+        </div>
+        <div class="edu-card">
+          <span class="card-icon"><i class="fas fa-building-columns"></i></span>
+          <div>
+            <h3>Bachelor of Management Information Systems (MIS)</h3>
+            <p>
+              University Student &middot; Egypt &mdash; Object-Oriented
+              Programming (C++), Enterprise Information Systems, Operations
+              Research, Project Management, E-Business Infrastructure.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="contact">
+        <div class="contact-box">
+          <p class="eyebrow">Contact</p>
+          <h2 class="section-title">Let's build something great</h2>
+          <p class="section-lead">
+            Have a project in mind or want to work together? Get in touch, I'd
+            love to hear about it.
+          </p>
+          <div class="hero-actions center">
+            <a class="btn btn--primary" href="mailto:abramamed772@gmail.com"><i class="fas fa-envelope"></i>&nbsp; Email Me</a>
+            <a class="btn btn--secondary" href="https://wa.me/201200556891" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i>&nbsp; WhatsApp</a>
+            <a class="btn btn--secondary" href="Ebraam_Emad_CV.pdf" download="Ebraam_Emad_CV.pdf"><i class="fas fa-file-arrow-down"></i>&nbsp; Download CV</a>
+          </div>
+          <nav class="socials" aria-label="Social links">
+            <a href="https://github.com/ebraam1-4" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.facebook.com/share/1AF8HFYKZi/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ebraam__14" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:abramamed772@gmail.com" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/201200556891" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:+201200556891" aria-label="Call" title="Call"><i class="fas fa-phone"></i></a>
+          </nav>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <span>&copy; 2026 Ebraam Emad. All rights reserved.</span>
+        <span>Front-End Developer &amp; WordPress Specialist</span>
+      </footer>
+    </div>
 
     <script
       type="module"

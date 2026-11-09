@@ -82,9 +82,10 @@ if (splineViewer) {
       attributes: true,
     });
 
+    let tries = 0;
     const loop = () => {
       hideSplineWatermark();
-      setTimeout(loop, 300);
+      if (++tries < 50) setTimeout(loop, 300);
     };
 
     loop();
@@ -97,3 +98,86 @@ if (splineViewer) {
 
   watchViewer();
 }
+
+
+/* ===== Reveal on scroll + active nav link ===== */
+(function () {
+  const reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) {
+            en.target.classList.add("in");
+            io.unobserve(en.target);
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+    reveals.forEach((el) => io.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add("in"));
+  }
+
+  const sections = document.querySelectorAll("main[id], section[id]");
+  if ("IntersectionObserver" in window && sections.length) {
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((en) => {
+          if (!en.isIntersecting) return;
+          navLinks.forEach((a) => {
+            a.classList.toggle(
+              "active",
+              a.getAttribute("href") === "#" + en.target.id,
+            );
+          });
+        });
+      },
+      { rootMargin: "-35% 0px -60% 0px" },
+    );
+    sections.forEach((s) => spy.observe(s));
+  }
+})();
+
+
+/* ===== Extra touches: progress bar, typed roles, card spotlight ===== */
+(function () {
+  const bar = document.getElementById("progress");
+  if (bar) {
+    const update = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = "scaleX(" + (max > 0 ? scrollY / max : 0) + ")";
+    };
+    addEventListener("scroll", update, { passive: true });
+    update();
+  }
+
+  const el = document.getElementById("typed");
+  if (el) {
+    const words = ["fast React interfaces", "WordPress & WooCommerce stores", "responsive, RTL-ready UIs", "things with AI in the loop"];
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      el.textContent = words[0];
+    } else {
+      let w = 0, i = 0, del = false;
+      const tick = () => {
+        const word = words[w];
+        i += del ? -1 : 1;
+        el.textContent = word.slice(0, i);
+        let t = del ? 35 : 70;
+        if (!del && i === word.length) { del = true; t = 1400; }
+        else if (del && i === 0) { del = false; w = (w + 1) % words.length; t = 300; }
+        setTimeout(tick, t);
+      };
+      tick();
+    }
+  }
+
+  document.querySelectorAll(".project-card, .skill-card").forEach((card) => {
+    card.addEventListener("pointermove", (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", e.clientX - r.left + "px");
+      card.style.setProperty("--my", e.clientY - r.top + "px");
+    });
+  });
+})();
